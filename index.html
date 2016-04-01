@@ -278,6 +278,7 @@
 					weatherHTML += '</p>';
 					resultsDiv.innerHTML = weatherHTML;
 				}
+				container.appendChild('resultsDiv');
 			}
 			// OPEN REQUEST
 			xhrObj.open('GET', 'api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=7844d08461e4cad85889d84599d2e8a8');
