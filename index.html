@@ -1,0 +1,289 @@
+
+
+<html>
+     <head>
+        <title>Scripting</title>
+
+        <script type="text/javascript">
+        	// WHEN WINDOW LOADS, RUN A FUNCTION THAT CREATES OUR PROGRAM'S CONTAINER DIV AND TOP BAR MENU
+            window.onload = function () {
+            //CREATE HTML FOR ALL CONTENT IN TOP BAR
+	            	// CREATE A CONTAINER DIV
+	          		var container = document.createElement("div");
+	          		// GIVE CONTAINER DIV AN ID OF "container"
+	                container.id = "container";
+	               	// CREATE A TOPBAR DIV 
+	               	var topBar = document.createElement("div");
+	                // GIVE TOPBAR DIV AN ID OF "topBar"
+	                topBar.id = "topBar";
+	                // PLACE TOPBAR DIV INSIDE OF CONTAINER DIV
+	                container.appendChild(topBar);
+	                // CREATE A LOGO DIV
+	                var logoDiv = document.createElement("div");
+	                // GIVE LOGO DIV AN ID OF "logoDiv"
+	                logoDiv.id = "logoDiv";
+	                // -- POPULATE LOGO DIV WITH LOGO -- FOR NOW JUST USE someLogo
+	                logoDiv.innerHTML = "<p>someLogo</p>";
+	                // PLACE LOGO DIV INSIDE THE TOPBAR DIV
+	                topBar.appendChild(logoDiv);
+	                // CREATE A MENU DIV 
+	                var menuDiv = document.createElement("div");
+	                // GIVE MENU DIV AN ID OF "menuDiv"
+	                menuDiv.id = "menuDiv";
+	                // PLACE MENU DIV INSIDE THE TOPBAR DIV
+	                topBar.appendChild(menuDiv);
+	                // CREATE AN UNORDERED LIST 
+	                var menuList = document.createElement("ul");
+	                // GIVE THE UNORDERED LIST AN ID OF "menuList"
+	                menuList.id = "menuList";
+	                // PLACE THE MENU LIST INSIDE THE MENU DIV
+	                menuDiv.appendChild(menuList);
+	                // CREATE LIST ITEM IPANEMA
+	                var ipanema = document.createElement("li");
+	                // GIVE IPANEMA AN ID OF IPANEMA
+	                ipanema.id = "ipanema";
+	                // GIVE IPANEMA A CLASS OF MENU LINK 
+	                ipanema.className = "menuLink";
+	                // PLACE LIST ITEM INSIDE MENU LIST
+	                menuList.appendChild(ipanema);
+	                // ADD 'IPANEMA' CONTENT
+	                ipanema.innerHTML = "IPANEMA";
+	                // CREATE LIST ITEM LEBLON
+	                var leblon = document.createElement("li");
+	                // GIVE LEBLON AN ID OF LEBLON
+	                leblon.id = "leblon";
+	                // GIVE LEBLON A CLASS OF MENU LINK
+	                leblon.className = "menuLink";
+	                // PLACE LIST ITEM INSIDE MENU LIST
+	                menuList.appendChild(leblon);
+	                // ADD 'LEBLON' CONTENT
+	                leblon.innerHTML = "LEBLON";
+	                // CREATE LIST ITEM COPACABANA
+	                var copacabana = document.createElement("li");
+	                // GIVE COPACABANA AN ID OF COPACABANA
+					copacabana.id = "copacabana";
+	                // GIVE COPACABANA A CLASS OF MENU LINK CLASS
+	                copacabana.className = "menuLink";
+	                // PLACE LIST ITEM INSIDE MENU LIST
+	                menuList.appendChild(copacabana);
+	                // ADD 'COPACABANA' CONTENT
+	                copacabana.innerHTML = "COPACABANA";
+	                // CREATE LIST ITEM SANCA
+	                var sanca = document.createElement("li");
+	                // GIVE SANCA AN ID OF SANCA
+	                sanca.id = "sanca";
+	                // GIVE SANCA A CLASS OF MENU LINK CLASS
+	                sanca.className = "menuLink";
+	                // PLACE LIST ITEM INSIDE MENU LIST
+	                menuList.appendChild(sanca);
+	                // ADD 'SANCA' CONTENT
+	                sanca.innerHTML = "SANCA";
+	                // CREATE LIST ITEM BARRA
+	                var barra = document.createElement("li");
+	                // GIVE BARRA AN ID OF BARRA
+	                barra.id = "barra";
+	                // GIVE BARRA A CLASS OF MENU LINK CLASS
+	                barra.className = "menuLink";
+	                // PLACE LIST ITEM INSIDE MENU LIST
+	                menuList.appendChild(barra);
+	                // ADD 'BARRA' CONTENT
+	                barra.innerHTML = "BARRA";
+	                // CREATE ANCHOR TAG TO IPANEMA ITEM
+	                ipanema.setAttribute('href',"https://www.youtube.com/");		               
+	                // CREATE ANCHOR TAG TO LEBLON ITEM
+
+	                // CREATE ANCHOR TAG TO COPACABANA ITEM
+	                
+	                // CREATE ANCHOR TAG TO SANCA ITEM
+	                
+	                // CREATE ANCHOR TAG TO BARRA ITEM
+
+	                // CREATE A IPANEMA CONTENT DIV
+	                var ipanemaContent = document.createElement("div");
+					// GIVE IPANEMA CONTENT DIV AN ID OF 'ipanemaContent'
+					ipanemaContent.id = "ipanemaContent";
+					// ADD IPANEMA CONTENT DIV TO CONTAINER DIV
+					container.appendChild(ipanemaContent);	     
+					// CREATE IPANEMA CONTENT DIV'S HEADER TAG
+					var ipanemaHeader = document.createElement("h2");
+					ipanemaHeader.innerHTML = "Ipanema";
+					// ADD HEADER TO THE IPANEMA CONTENT DIV
+	                ipanemaContent.appendChild(ipanemaHeader);
+	                // POPULATE IPANEMA CONTENT DIV WITH WEATHER CONDITIONS
+	                // CREATE AN UL OF WEATHER CONDITIONS
+	                var ipanemaWeatherUl = document.createElement("ul");
+	               	// GIVE WEATHER CONDITIONS UL AN ID OF 'ipanemaWeatherUl'
+	                ipanemaWeatherUl.id = "ipanemaWeatherUl";
+	               	// PLACE WEATHER CONDITIONS UL INSIDE IPANEMA CONTAINER DIV
+	                ipanemaContent.appendChild(ipanemaWeatherUl);
+	               	// CREATE AN LI FOR IPANEMA SUNRISE
+	        		var ipanemaSunrise = document.createElement("li");
+	        		// GIVE IPANEMA SUNRISE LI AN ID OF 'ipanemaSunrise'
+	        		ipanemaSunrise.id = "ipanemaSunrise";
+	        		// ADD SOME CONTENT TO IPANEMA SUNRISE
+	        		ipanemaSunrise.innerHTML = "Sunrise: ";
+	       			// ADD IPANEMA SUNRISE LI TO IPANEMA WEATHER UL
+	        		ipanemaWeatherUl.appendChild(ipanemaSunrise);
+	        		// CREATE AN LI FOR IPANEMA SUNSET
+	        		var ipanemaSunset = document.createElement("li");
+	        		// GIVE IPANEMA SUNSET LI AN ID OF 'ipanemaSunset'
+	        		ipanemaSunset.id = "ipanemaSunset";
+	        		// ADD SOME CONTENT TO IPANEMA SUNSET
+	        		ipanemaSunset.innerHTML = "Sunset: "
+	        		// ADD IPANEMA SUNSET LI TO IPANEMA WEATHER UL
+	        		ipanemaWeatherUl.appendChild(ipanemaSunset);
+	        		// CREATE AN LI FOR IPANEMA SKY
+	        		var ipanemaSky = document.createElement("li");
+	        		// GIVE IPANEMA SKY LI AN ID OF 'ipanemaSky'
+	        		ipanemaSky.id = "ipanemaSky";
+	        		// ADD SOME CONTENT TO IPANEMA SKY
+	        		ipanemaSky.innerHTML = "Sky: ";
+	        		// ADD IPANEMA SKY LI TO IPANEMA WEATHER UL
+	        		ipanemaWeatherUl.appendChild(ipanemaSky);
+	        		// CREATE AN LI FOR IPANEMA WIND
+	        		var ipanemaWind = document.createElement("li");
+	        		// GIVE IPANEMA WIND LI AN ID OF 'ipanemaWind'
+	        		ipanemaWind.id = "ipanemaWind";
+	        		// ADD SOME CONTENT TO IPANEMA WIND
+	        		ipanemaWind.innerHTML = "Wind: ";
+	        		// ADD IPANEMA WIND LI TO IPANEMA WEATHER UL
+	        		ipanemaWeatherUl.appendChild(ipanemaWind);
+	        		// CREATE AN LI FOR IPANEMA TEMPERATURE
+	        		var ipanemaTemperature = document.createElement("li");
+	        		// GIVE IPANEMA TEMPERATURE LI AN ID OF 'ipanemaTemperature'
+	        		ipanemaTemperature.id = "ipanemaTemperature";
+	        		// ADD SOME CONTENT TO IPANEMA TEMPERAURE
+	        		ipanemaTemperature.innerHTML = "Temperature: ";
+	        		// ADD IPANEMA TEMPERATURE LI TO IPANEMA WEATHER UL
+	        		ipanemaWeatherUl.appendChild(ipanemaTemperature);
+	        		// CREATE AN LI FOR IPANEMA SENSATION
+	        		var ipanemaSensation = document.createElement("li");
+	        		// GIVE IPANEMA SENSATION LI AN ID OF 'ipanemaSensation'
+	        		ipanemaSensation.id = "ipanemaSensation";
+	        		// ADD SOME CONTENT TO IPANEMA SENSATION
+	        		ipanemaSensation.innerHTML = "Sensation: ";
+	        		// ADD IPANEMA SENSATION LI TO IPANEMA WEATHER UL
+	        		ipanemaWeatherUl.appendChild(ipanemaSensation);
+	        		// CREATE AN LI FOR IPANEMA PRECIPITATION
+	        		var ipanemaPrecipitation = document.createElement("li");
+	        		// GIVE IPANEMA PRECIPITATION LI AN ID OF 'ipanemaPrecipitation'
+	        		ipanemaPrecipitation.id = "ipanemaPrecipitation";
+	        		// ADD SOME CONTENT TO IPANEMA PRECIPITATION
+	        		ipanemaPrecipitation.innerHTML = "Precipitation: ";
+	        		// ADD IPANEMA PRECIPITATION LI TO IPANEMA WEATHER UL
+	        		ipanemaWeatherUl.appendChild(ipanemaPrecipitation);
+
+	        // CREATE CSS FOR ALL THE CONTENT CREATED FOR NOW
+	        		// GIVE CONTAINER DIV A WIDTH OF 1000 PX
+	        		container.style.width = "1000px";
+	        		// GIVE CONTAINER DIV AUTO MARGINS
+			        container.style.margin = "0 auto";
+			        // GIVE ALL ELEMENTS IN CONTAINER THE SAME FONT
+			        container.style.fontFamily = "verdana, arial, times new roman";	
+			        // GIVE TOP BAR A HEIGHT
+			        topBar.style.height = "60px";
+			        // GIVE TOP BAR A WIDTH OF 100%
+			        topBar.style.width = "100%";
+			        // GIVE TOP BAR A BACKGROUND COLOR
+			        topBar.style.backgroundColor = "#00ff33";
+			        // GIVE LOGO DIV PADDING TOP
+			        logoDiv.style.paddingTop = "5px";
+			        // GIVE LOGO DIV PADDING LEFT
+			        logoDiv.style.paddingLeft = "5px";
+			        // GIVE LOGO DIV PADDING RIGHT
+			        logoDiv.style.paddingRight = "70px";
+			        // MAKE LOGO DIV FLOAT LEFT
+			        logoDiv.style.float = "left";
+			        // MAKE MENU DIV FLOAT LEFT
+			        menuDiv.style.float = "left";
+			        // GIVE TOP MENU DIV PADDING LEFT
+			        menuDiv.style.paddingLeft = "30px";
+			        menuDiv.style.marginBottom = "30px"; 
+			        // GIVE ALL MENU DIV, LIST ITEMS: 
+			        //FLOAT LEFT, list-style: none; , FONT-WEIGHT BOLD, FONT FAMILY: VERDANA; HEIGHT OF 100%, PADDING LEFT, RIGHT AND TOP
+
+			        // MENU LIST UNORDERED LIST
+					menuList.style.listStyle = "none";
+			        menuList.style.fontWeight = "bold";
+			        // IPANEMA LIST ITEM
+			        ipanema.style.float = "left";
+			        ipanema.style.paddingLeft = "10px";
+			        ipanema.style.paddingRight = "10px";
+			        ipanema.style.paddingTop = "4px";
+			        // LEBLON LIST ITEM
+			        leblon.style.listStyle = "none";
+			        leblon.style.float = "left";
+			        leblon.style.paddingLeft = "10px";
+			        leblon.style.paddingRight = "10px";
+			        leblon.style.paddingTop = "4px";
+			        // COPACABANA LIST ITEM
+			        copacabana.style.listStyle = "none";
+			        copacabana.style.float = "left";
+			        copacabana.style.paddingLeft = "10px";
+			        copacabana.style.paddingRight = "10px";
+			        copacabana.style.paddingTop = "4px";
+			        // SANCA LIST ITEM
+			        sanca.style.listStyle = "none";
+			        sanca.style.float = "left";
+			        sanca.style.paddingLeft = "10px";
+			        sanca.style.paddingRight = "10px";
+			        sanca.style.paddingTop = "4px";
+			        // BARRA LIST ITEM
+			        barra.style.listStyle = "none";
+			        barra.style.float = "left";
+			        barra.style.paddingLeft = "10px";
+			        barra.style.paddingRight = "10px";
+			        barra.style.paddingTop = "4px";
+			    // CSS FOR IPANEMA CONTENT DIV
+			    	ipanemaContent.style.width = "500px";
+			    	ipanemaContent.style.backgroundColor = "#eeeeee";
+			    	ipanemaContent.style.margin = "0 auto";
+			    	ipanemaContent.style.float = "left";
+			    	ipanemaContent.style.paddingLeft = "20px";
+			    	// CSS FOR IPANEMA HEADER TAG
+			    	ipanemaHeader.style.textAlign = "center";			    	
+					// CSS FOR IPANEMA WEATHER UL	
+					ipanemaWeatherUl.style.listStyle = "none";
+					ipanemaWeatherUl.style.fontWeight = "bold"; 
+				// CSS FOR WEATHER UL's LIST ITEMS
+					// CSS FOR IPANEMA SUNRISE
+                document.body.appendChild(container);
+
+
+            }
+        </script>
+    </head>
+
+    <body>
+    	<script type="text/javascript">
+			// OPEN WEATHER API EXAMPLE
+			// API KEY:  
+			// 7844d08461e4cad85889d84599d2e8a8
+			// CALLING WEATHER API USING LAT AND LON
+			// api.openweathermap.org/data/2.5/weather?lat=-22.986422&lon=-43.205981
+			// CALLING WEATHER API USING ZIP CODE
+			//api.openweathermap.org/data/2.5/weather?zip=94040,us
+			// CALLING WEATHER API USING CITY ID
+			// api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=7844d08461e4cad85889d84599d2e8a8
+			// CREATE DIV ELEMENT THAT WILL HOLD THE RESULTS
+				var resultsDiv = document.createElement('div');
+			// CREATE XML HTTP REQUEST OBJECT
+			var xhrObj = new XMLHttpRequest();
+			// CREATE CALLBACK FUNCTION
+			xhrObj.onreadystatechange = function (){
+				if(xhrObj.readyState == 4 && xhrObj.statusText == 200){
+					var weather = JSON.parse(xhrObj.responseText);
+					var weatherHTML = '<p id="weatherHTML">';
+					weatherHTML += weather;
+					weatherHTML += '</p>';
+					resultsDiv.innerHTML = weatherHTML;
+				}
+			}
+			// OPEN REQUEST
+			xhrObj.open('GET', 'api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=7844d08461e4cad85889d84599d2e8a8');
+			// SEND REQUEST
+			xhrObj.send();
+		</script>
+
+    </body>
+</html>
