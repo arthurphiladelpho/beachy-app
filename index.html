@@ -3,7 +3,7 @@
 <html>
      <head>
         <title>Scripting</title>
-
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script type="text/javascript">
         	// WHEN WINDOW LOADS, RUN A FUNCTION THAT CREATES OUR PROGRAM'S CONTAINER DIV AND TOP BAR MENU
             window.onload = function () {
@@ -245,47 +245,31 @@
 					// CSS FOR IPANEMA WEATHER UL	
 					ipanemaWeatherUl.style.listStyle = "none";
 					ipanemaWeatherUl.style.fontWeight = "bold"; 
-				// CSS FOR WEATHER UL's LIST ITEMS
-					// CSS FOR IPANEMA SUNRISE
-                document.body.appendChild(container);
+					
+					// CREATE DIV ELEMENT THAT WILL HOLD THE RESULTS
+					var resultsDiv = document.createElement('div');
+					container.appendChild(resultsDiv);
+					resultsDiv.innerHTML += "<h1>Whatchu Talkin Bout Willis</h1>";
 
-
+					// CREATE XML HTTP REQUEST OBJECT
+					var xhrObj = new XMLHttpRequest();
+					// CREATE CALLBACK FUNCTION
+					xhrObj.onreadystatechange = function (){
+						if(xhrObj.readyState == 4 && xhrObj.statusText == 200){
+							var weather = JSON.parse(xhrObj.responseText);
+							var weatherHTML = '<p id="weatherHTML">';
+							weatherHTML += weather;
+							weatherHTML += '</p>';
+						}
+						resultsDiv.innerHTML += weatherHTML;
+					}
+					// OPEN REQUEST
+					xhrObj.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=7844d08461e4cad85889d84599d2e8a8');
+					// SEND REQUEST
+					xhrObj.send();
+	                document.body.appendChild(container);
             }
         </script>
     </head>
-
-    <body>
-    	<script type="text/javascript">
-			// OPEN WEATHER API EXAMPLE
-			// API KEY:  
-			// 7844d08461e4cad85889d84599d2e8a8
-			// CALLING WEATHER API USING LAT AND LON
-			// api.openweathermap.org/data/2.5/weather?lat=-22.986422&lon=-43.205981
-			// CALLING WEATHER API USING ZIP CODE
-			//api.openweathermap.org/data/2.5/weather?zip=94040,us
-			// CALLING WEATHER API USING CITY ID
-			// api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=7844d08461e4cad85889d84599d2e8a8
-			// CREATE DIV ELEMENT THAT WILL HOLD THE RESULTS
-				var resultsDiv = document.createElement('div');
-				resultsDiv.innerHTML += "<h1>Whatchu Talkin Bout Willis</h1>";
-
-			// CREATE XML HTTP REQUEST OBJECT
-			var xhrObj = new XMLHttpRequest();
-			// CREATE CALLBACK FUNCTION
-			xhrObj.onreadystatechange = function (){
-				if(xhrObj.readyState == 4 && xhrObj.statusText == 200){
-					var weather = JSON.parse(xhrObj.responseText);
-					var weatherHTML = '<p id="weatherHTML">';
-					weatherHTML += weather;
-					weatherHTML += '</p>';
-					resultsDiv.innerHTML += weatherHTML;
-				}
-			}
-			// OPEN REQUEST
-			xhrObj.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=7844d08461e4cad85889d84599d2e8a8');
-			// SEND REQUEST
-			xhrObj.send();
-		</script>
-
-    </body>
+    <body></body>
 </html>
