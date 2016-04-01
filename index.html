@@ -267,6 +267,8 @@
 			// api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=7844d08461e4cad85889d84599d2e8a8
 			// CREATE DIV ELEMENT THAT WILL HOLD THE RESULTS
 				var resultsDiv = document.createElement('div');
+				resultsDiv.innerHTML += "<h1>Whatchu Talkin Bout Willis</h1>";
+
 			// CREATE XML HTTP REQUEST OBJECT
 			var xhrObj = new XMLHttpRequest();
 			// CREATE CALLBACK FUNCTION
@@ -276,7 +278,7 @@
 					var weatherHTML = '<p id="weatherHTML">';
 					weatherHTML += weather;
 					weatherHTML += '</p>';
-					resultsDiv.innerHTML = weatherHTML;
+					resultsDiv.innerHTML += weatherHTML;
 				}
 			}
 			// OPEN REQUEST
