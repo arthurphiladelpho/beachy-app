@@ -248,8 +248,17 @@
 					
 					// CREATE DIV ELEMENT THAT WILL HOLD THE RESULTS
 					var resultsDiv = document.createElement('div');
+					resultsDiv.id = "resultsDiv";
 					container.appendChild(resultsDiv);
-					resultsDiv.innerHTML += "<h1>Whatchu Talkin Bout Willis</h1>";
+					// RESULTS DIV CSS STYLES
+					resultsDiv.style.width = "200px";
+			    	resultsDiv.style.backgroundColor = "#888888";
+			    	resultsDiv.style.margin = "0 auto";
+			    	resultsDiv.style.marginLeft = "20px";
+			    	resultsDiv.style.float = "left";
+			    	resultsDiv.style.paddingLeft = "20px";
+
+					resultsDiv.innerHTML += "<h2>My Results:</h2>";
 
 					// CREATE XML HTTP REQUEST OBJECT
 					var xhrObj = new XMLHttpRequest();
