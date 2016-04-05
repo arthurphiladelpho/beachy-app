@@ -273,7 +273,7 @@
 						resultsDiv.innerHTML += weatherHTML;
 					}
 					// OPEN REQUEST
-					xhrObj.open('GET', 'api.openweathermap.org/data/2.5/weather?q=London,uk');
+					xhrObj.open('GET', 'https://api.forecast.io/forecast/a45bd61020ba2dacf470d8130e92240b/-22.986430,-43.206067,America/New_York');
 					// SEND REQUEST
 					xhrObj.send();
 	                document.body.appendChild(container);
