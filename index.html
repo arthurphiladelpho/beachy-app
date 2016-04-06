@@ -270,7 +270,7 @@
 							weatherHTML += weather;
 							weatherHTML += '</p>';
 						}
-						resultsDiv.innerHTML += weatherHTML;
+						resultsDiv.appendChild(weatherHTML);
 					}
 					// OPEN REQUEST
 					xhrObj.open('GET', 'https://api.forecast.io/forecast/a45bd61020ba2dacf470d8130e92240b/-22.986430,-43.206067');
