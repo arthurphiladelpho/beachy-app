@@ -260,23 +260,28 @@
 
 					resultsDiv.innerHTML += "<h2>My Results:</h2>";
 
-					// CREATE XML HTTP REQUEST OBJECT
-					var xhrObj = new XMLHttpRequest();
-					// CREATE CALLBACK FUNCTION
-					xhrObj.onreadystatechange = function (){
-						if(xhrObj.readyState == 4 && xhrObj.statusText == 200){
-							var weather = JSON.parse(xhrObj.responseText);
-							var weatherHTML = '<p id="weatherHTML">';
-							weatherHTML += weather;
-							weatherHTML += '</p>';
+					var button = document.createElement("BUTTON");
+					button.id = "ajaxButton";
+					var buttonText = document.createTextNode("Click Me!");
+					button.appendChild(buttonText);
+					resultsDiv.appendChild(button);
+					// ADD AJAX TO BUTTON
+						$('button').click(function (){
+						$('button').removeClass("selected");
+						$(this).addClass("selected"); // -> To make this work, add CSS styles to the selected class
+						var weatherAPI = "https://api.forecast.io/forecast/a45bd61020ba2dacf470d8130e92240b/39.625066,116.324979";
+						function displayWeatherCallback(data){
+							var weatherHTML = "<div>";
+							weatherHTML += data;
+							weatherHTML += "</div>";
+							resultsDiv.appendChild(weatherHTML);
 						}
-						resultsDiv.appendChild(weatherHTML);
-					}
-					// OPEN REQUEST
-					xhrObj.open('GET', 'https://api.forecast.io/forecast/a45bd61020ba2dacf470d8130e92240b/-22.986430,-43.206067');
-					// SEND REQUEST
-					xhrObj.send();
+						$.getJSON(weatherAPI, displayWeatherCallback);
+
+					}); // Click Button Event Handler
+					
 	                document.body.appendChild(container);
+
             }
         </script>
     </head>
